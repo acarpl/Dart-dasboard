@@ -9,39 +9,12 @@ class DasboardPages extends StatefulWidget {
 
 class _DasboardPagesState extends State<DasboardPages> {
   int curentPageIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.all(
-              10), // Corrected: Padding widget with EdgeInsets
-          child: Column(
-            mainAxisAlignment:
-                MainAxisAlignment.start, // Moved to correct position
-            children: [
-              Container(
-                height: 120,
-                width: 400,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                ),
-                child: const Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Selamat Datang,",
-                      style: TextStyle(color: Colors.white, fontSize: 25),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
         appBar: AppBar(
           toolbarHeight: 40,
           scrolledUnderElevation: 10,
@@ -52,6 +25,88 @@ class _DasboardPagesState extends State<DasboardPages> {
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                height: 120,
+                width: double.infinity, // Set to expand width dynamically
+                decoration: BoxDecoration(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                ),
+                child: const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Selamat Datang,",
+                      style: TextStyle(color: Colors.white, fontSize: 25),
+                    ),
+                    Text(
+                      "MANG ADMIN,",
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    ),
+                    Text(
+                      "Posyandu Merpati",
+                      style: TextStyle(color: Colors.white, fontSize: 10),
+                    ),
+                  ],
+                ),
+              ),
+              // Example Widgets Section
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment
+                      .spaceBetween, // Ensure spacing is equal between items
+                  children: [
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal:
+                                4.0), // Add margin to create space between Containers
+                        height: 125,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal:
+                                4.0), // Add margin to create space between Containers
+                        height: 125,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal:
+                                4.0), // Add margin to create space between Containers
+                        height: 125,
+                        decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // Add other widgets or containers here
+            ],
           ),
         ),
         bottomNavigationBar: NavigationBar(
@@ -102,7 +157,7 @@ class _DasboardPagesState extends State<DasboardPages> {
               ),
               icon: Icon(Icons.settings),
               label: "Pengaturan",
-            )
+            ),
           ],
         ),
       ),
